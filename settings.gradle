@@ -1,2 +1,2 @@
-include ':app', ':kotlin-recycler'
+include ':sample', ':kotlin-recycler'
 rootProject.name='KotlinRecyclerAdapter'
