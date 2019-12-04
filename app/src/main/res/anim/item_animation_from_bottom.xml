@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="500">
+
+    <translate
+        android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+        android:fromYDelta="50%p"
+        android:toYDelta="0"
+        />
+
+    <alpha
+        android:fromAlpha="0"
+        android:toAlpha="1"
+        android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+        />
+
+    <!--
+    The one thing to note here is the android:fromXDelta="100%p" where the p is not a typo.
+     When adding the p percentage is based of the parent.
+     In this case it means that the view is translated 100% of the parents width, to the right.
+    -->
+
+</set>
