@@ -9,21 +9,24 @@ import com.abed.kotlin_recycler.baseComponent.BaseViewHolder
 
 class SimpleRecyclerAdapter<RecyclerData : Any>(
     data: List<RecyclerData>, @LayoutRes layoutID: Int,
-    private val animationRes: Int = NO_TURN_UP_ANIMATION,
-    private val onBindView: (holder: BaseViewHolder<RecyclerData>, data: RecyclerData, position: Int) -> Unit
+    private val animationRes: Int,
+    private val onBindView: BaseViewHolder<RecyclerData>.(data: RecyclerData) -> Unit
 ) : BaseRecyclerAdapter<RecyclerData>(data) {
 
     override val layoutItemId: Int = layoutID
 
+    
+
     override fun onBindViewHolder(holder: BaseViewHolder<RecyclerData>, position: Int) {
         val data = dataList[position]
-        onBindView(holder, data, position)
+
+        holder.onBindView(data)
+
         if (animationRes != NO_TURN_UP_ANIMATION)
-            holder.itemView.setAnimation( position)
+            holder.itemView.setAnimation(position)
     }
 
-    private var lastPosition =
-        NO_TURN_UP_ANIMATION
+    private var lastPosition = -1
     private fun View.setAnimation(position: Int) {
 
         if (position > lastPosition) {

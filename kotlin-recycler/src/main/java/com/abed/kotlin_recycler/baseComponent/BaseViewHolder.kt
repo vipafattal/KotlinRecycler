@@ -8,10 +8,9 @@ import com.abed.kotlin_recycler.helpers.inflater
 /**
  * Created by ${User} on ${Date}
  */
-open class BaseViewHolder<in T>(parent: ViewGroup, @LayoutRes layoutId: Int) :
+open class BaseViewHolder<T>(parent: ViewGroup, @LayoutRes layoutId: Int) :
     RecyclerView.ViewHolder(parent.inflater(layoutId)) {
 
-    fun clearAnimation() {
-        itemView.clearAnimation()
-    }
+    fun clearAnimation() = itemView.clearAnimation()
+
 }
