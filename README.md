@@ -6,7 +6,7 @@ Simple RecyclerView Adapter using Kotlin
 
 
 ### ReyclerView made simple as one line of code
-```xml
+```kotlin
 recyclerView.withSimpleAdapter(dummyData, R.layout.item_recipe) { data ->
   itemView.recipe_img.setImageResource(data.drawable)
   itemView.recipe_name.text = data.name
