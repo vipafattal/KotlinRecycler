@@ -41,9 +41,8 @@ implementation 'com.github.vipafattal:KotlinRecycler:1.0'
         tools:itemCount="3"
         tools:listitem="@layout/item_recipe" />
 ```
-##### to handle clicks on items you have two options:
 
-1.now all you need is to call withSimpleAdapter() function on recyclerView as below:
+1.now all you need is to call withSimpleAdapter() function on recyclerView then you could call anything from the holder like itemView as shown below:
 
 ```kotlin
 class MainActivity : AppCompatActivity() {
