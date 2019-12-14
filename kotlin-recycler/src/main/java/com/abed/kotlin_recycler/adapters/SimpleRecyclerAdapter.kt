@@ -10,14 +10,14 @@ import com.abed.kotlin_recycler.baseComponent.BaseViewHolder
 class SimpleRecyclerAdapter<RecyclerData : Any>(
     data: List<RecyclerData>, @LayoutRes layoutID: Int,
     private val animationRes: Int,
-    private val onBindView: BaseViewHolder<RecyclerData>.(data: RecyclerData) -> Unit
+    private val onBindView: BaseViewHolder.(data: RecyclerData) -> Unit
 ) : BaseRecyclerAdapter<RecyclerData>(data) {
 
     override val layoutItemId: Int = layoutID
 
     
 
-    override fun onBindViewHolder(holder: BaseViewHolder<RecyclerData>, position: Int) {
+    override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
         val data = dataList[position]
 
         holder.onBindView(data)
@@ -38,7 +38,7 @@ class SimpleRecyclerAdapter<RecyclerData : Any>(
         }
     }
 
-    override fun onViewDetachedFromWindow(holder: BaseViewHolder<RecyclerData>) {
+    override fun onViewDetachedFromWindow(holder: BaseViewHolder) {
         holder.clearAnimation()
     }
 

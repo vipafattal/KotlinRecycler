@@ -9,7 +9,7 @@ import com.abed.kotlin_recycler.baseComponent.BaseViewHolder
 
 fun <T : Any> RecyclerView.withSimpleAdapter(
     dataList: List<T>, @LayoutRes layoutID: Int, @AnimRes turnUpAnim: Int,
-    onBindView: BaseViewHolder<T>.(data: T) -> Unit
+    onBindView: BaseViewHolder.(data: T) -> Unit
 ): SimpleRecyclerAdapter<T> {
     val recyclerAdapter =
         SimpleRecyclerAdapter(
@@ -24,7 +24,7 @@ fun <T : Any> RecyclerView.withSimpleAdapter(
 
 fun <T : Any> RecyclerView.withSimpleAdapter(
     dataList: List<T>, @LayoutRes layoutID: Int,
-    onBindView: BaseViewHolder<T>.(data: T) -> Unit
+    onBindView: BaseViewHolder.(data: T) -> Unit
 ): SimpleRecyclerAdapter<T> {
     val recyclerAdapter =
         SimpleRecyclerAdapter(
