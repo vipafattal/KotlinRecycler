@@ -39,6 +39,7 @@ androidExtensions {
 ```
 ### for more info about the implementation see [see this atricle](https://medium.com/p/1e6ab9a55fe7)
 
+
 # Example :
 ```xml
       <androidx.recyclerview.widget.RecyclerView
