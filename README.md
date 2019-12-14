@@ -12,7 +12,7 @@ recyclerView.withSimpleAdapter(dummyData, R.layout.item_recipe) { data ->
   itemView.recipe_name.text = data.name
 }
 ```
-# Usage
+# Setup
 
 #### Step 1
 add in your root build.gradle at the end of repositories
@@ -30,7 +30,16 @@ add the dependency to the app module
 implementation 'com.github.vipafattal:KotlinRecycler:1.0'
 ```
 
-#### Example :
+#### Step 3
+add this line to the app module to enable view extensions in RecyclrView Holder
+```
+androidExtensions {
+   experimental = true
+}
+```
+### for more info about the implementation see [see this atricle](https://medium.com/p/1e6ab9a55fe7)
+
+# Example :
 ```xml
       <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -68,6 +77,5 @@ class MainActivity : AppCompatActivity() {
     }
 }
 ```
-
 ##### you're free to make pull request and contribute, happy coding!
 
