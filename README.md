@@ -74,6 +74,9 @@ class MainActivity : AppCompatActivity() {
         recyclerView.withSimpleAdapter(dummyData, R.layout.item_recipe) { data ->
             itemView.recipe_img.setImageResource(data.drawable)
             itemView.recipe_name.text = data.name
+	    itemView.setOnClickListener {
+	     //Do what you want when user click on item.
+	    }
         }
     }
 }
