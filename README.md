@@ -27,7 +27,7 @@ allprojects {
 #### Step 2
 add the dependency to the app module
 ```groovy
-implementation 'com.github.vipafattal:KotlinRecycler:1.2'
+implementation 'com.github.vipafattal:KotlinRecycler:1.2.1'
 ```
 
 #### Step 3
