@@ -71,10 +71,24 @@ class MainActivity : AppCompatActivity() {
         )
 
 
+        //To set onItemClickListener (Avoid object creation each time view onBindViewHolderCalled).
+        recyclerView.withSimpleAdapter(dummyData, R.layout.item_recipe,
+            onBindView = { data ->
+                recipe_img.setImageResource(data.drawable)
+                recipe_name.text = data.name
+            }, 
+	    onItemClick = { position ->
+                Toast.makeText(context, dummyData[position].name, Toast.LENGTH_LONG).show()
+            }
+        )
+	
+	//OR
+
         recyclerView.withSimpleAdapter(dummyData, R.layout.item_recipe) { data ->
             itemView.recipe_img.setImageResource(data.drawable)
             itemView.recipe_name.text = data.name
-	    itemView.setOnClickListener {
+            //set onItemClickListener each time view get binned to recyclerView (Each time create onClickListener object)
+	    onItemClickListener {
 	     //Do what you want when user click on item.
 	    }
         }
