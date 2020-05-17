@@ -1,7 +1,6 @@
 package com.abed.kotlinrecycleradapter
 
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.abed.kotlin_recycler.withSimpleAdapter
@@ -29,7 +28,8 @@ class MainActivity : AppCompatActivity() {
             onBindView = { data ->
                 recipe_img.setImageResource(data.drawable)
                 recipe_name.text = data.name
-            }, onItemClick = { position ->
+            },
+            onItemClick = { position ->
                 Toast.makeText(context, dummyData[position].name, Toast.LENGTH_LONG).show()
             }
         )
