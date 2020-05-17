@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    android:layout_margin="@dimen/main_margin"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="270dp">
+    android:layout_height="270dp"
+    android:layout_margin="@dimen/main_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <ImageView
-        android:id="@+id/recipe_img"
-        tools:src="@drawable/a"
-        android:scaleType="centerCrop"
-        android:layout_width="match_parent"
-        android:layout_height="270dp"/>
+        <ImageView
+            android:id="@+id/recipe_img"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/a" />
 
-    <TextView
-        android:id="@+id/recipe_name"
-        android:padding="8dp"
-        android:background="#DAFFFFFF"
-        style="@style/TextAppearance.AppCompat.Body2"
-        tools:text="Meal Name"
-        android:layout_alignParentBottom="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/recipe_name"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#DAFFFFFF"
+            android:padding="8dp"
+            android:text="@{recipe.name}"
+            tools:text="Meal Name" />
 
-</RelativeLayout>
+    </RelativeLayout>
+

@@ -1,2 +1,3 @@
 include ':sample', ':kotlin-recycler'
 rootProject.name='KotlinRecyclerAdapter'
+include ':kotlin-recycler-binding'
