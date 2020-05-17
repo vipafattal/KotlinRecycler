@@ -13,7 +13,7 @@ fun <T : Any> RecyclerView.withViewTypeAdapter(
     onClickListener: (View.(Int) -> Unit)?
 ): ViewTypeRecyclerAdapter<T> = ViewTypeRecyclerAdapter(
     dataList,
-    SimpleRecyclerAdapter.NO_TURN_UP_ANIMATION,
+    turnUpAnim,
     onBindView,
     viewType,
     onClickListener
@@ -24,7 +24,7 @@ fun <T : Any> RecyclerView.withViewTypeAdapter(
     onBindView: BaseViewHolder.(data: T) -> Unit
 ): ViewTypeRecyclerAdapter<T> = ViewTypeRecyclerAdapter(
     dataList,
-    SimpleRecyclerAdapter.NO_TURN_UP_ANIMATION,
+    turnUpAnim,
     onBindView,
     viewType,
     null)
