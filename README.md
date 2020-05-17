@@ -27,7 +27,7 @@ allprojects {
 #### Step 2
 add the dependency to the app module
 ```groovy
-implementation 'com.github.vipafattal:KotlinRecycler:1.1'
+implementation 'com.github.vipafattal:KotlinRecycler:1.2'
 ```
 
 #### Step 3
@@ -70,12 +70,31 @@ class MainActivity : AppCompatActivity() {
             Recipe("Cool Watermelon drink", R.drawable.h)
         )
 
+        //Without item clickListener.
+        recyclerView.withSimpleAdapter(dummyData, R.layout.item_recipe) { data ->
+            itemView.recipe_img.setImageResource(data.drawable)
+            itemView.recipe_name.text = data.name
+        }
+
+        //Set onItemClickListener (Avoid object creation each time view onBindViewHolderCalled).
+        recyclerView.withSimpleAdapter(dummyData, R.layout.item_recipe,
+            onBindView = { data ->
+                recipe_img.setImageResource(data.drawable)
+                recipe_name.text = data.name
+            }, 
+	    onItemClick = { position ->
+                Toast.makeText(context, dummyData[position].name, Toast.LENGTH_LONG).show()
+            }
+        )
+	
+	//OR
 
         recyclerView.withSimpleAdapter(dummyData, R.layout.item_recipe) { data ->
             itemView.recipe_img.setImageResource(data.drawable)
             itemView.recipe_name.text = data.name
-	    itemView.setOnClickListener {
-	     //Do what you want when user click on item.
+            //set onItemClickListener each time view get binned to recyclerView (Each time create onClickListener object)
+	    onItemClickListener { position->          
+	       Toast.makeText(context, dummyData[position].name, Toast.LENGTH_LONG).show()
 	    }
         }
     }
