@@ -8,7 +8,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.item_recipe.*
 
 class MainActivity : AppCompatActivity() {
-    //private lateinit var activityMainBinding: ActivityMainBinding
+
     val dummyData = listOf(
         Recipe("Chocolate", R.drawable.a),
         Recipe("French Fries", R.drawable.b),
