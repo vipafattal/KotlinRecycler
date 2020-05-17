@@ -24,7 +24,7 @@ abstract class BaseRecyclerAdapter<Data : Any>(
         return baseViewHolder
     }
 
-    private val onItemClickListener = object :
+    internal val onItemClickListener = object :
         OnItemClickListener {
         override fun onClick(v: View?) {
             val position = mRecyclerView.layoutManager!!.getPosition(v!!)
