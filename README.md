@@ -8,8 +8,8 @@ Simple RecyclerView Adapter using Kotlin
 ### ReyclerView made simple as one line of code
 ```kotlin
 recyclerView.withSimpleAdapter(dummyData, R.layout.item_recipe) { data ->
-  itemView.recipe_img.setImageResource(data.drawable)
-  itemView.recipe_name.text = data.name
+  recipe_img.setImageResource(data.drawable)
+  recipe_name.text = data.name
 }
 ```
 # Setup
@@ -72,8 +72,8 @@ class MainActivity : AppCompatActivity() {
 
         //Without item clickListener.
         recyclerView.withSimpleAdapter(dummyData, R.layout.item_recipe) { data ->
-            itemView.recipe_img.setImageResource(data.drawable)
-            itemView.recipe_name.text = data.name
+            recipe_img.setImageResource(data.drawable)
+            recipe_name.text = data.name
         }
 
         //Set onItemClickListener (Avoid object creation each time view onBindViewHolderCalled).
@@ -90,8 +90,8 @@ class MainActivity : AppCompatActivity() {
 	//OR
 
         recyclerView.withSimpleAdapter(dummyData, R.layout.item_recipe) { data ->
-            itemView.recipe_img.setImageResource(data.drawable)
-            itemView.recipe_name.text = data.name
+            recipe_img.setImageResource(data.drawable)
+            recipe_name.text = data.name
             //set onItemClickListener each time view get binned to recyclerView (Each time create onClickListener object)
 	    onItemClickListener { position->          
 	       Toast.makeText(context, dummyData[position].name, Toast.LENGTH_LONG).show()
