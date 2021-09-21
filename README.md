@@ -2,7 +2,7 @@
 (http://www.apache.org/licenses/LICENSE-2.0)
 
 # KotlinRecycler
-A set of Kotlin extensions that simplfy RecyclerView and eliminate the Adapter boilerplate code.
+A set of Kotlin extensions that simplify RecyclerView and eliminate the Adapter boilerplate code.
 
 
 ### ReyclerView made simple as one line of code
